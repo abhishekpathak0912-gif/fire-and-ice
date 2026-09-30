@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Inter:ital,wght@0,300..700;1,300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;min-height:100%;margin:0;padding:0;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "background": "#F5F1E9",
+        "surface": "#F5F1E9",
+        "surface-bright": "#fcf9f0",
+        "surface-container-lowest": "#ffffff",
+        "surface-container-low": "#f6f4ea",
+        "surface-container": "#E5DED2",
+        "surface-container-high": "#ebe8df",
+        "surface-container-highest": "#E5DED2",
+        "surface-dim": "#dcdad1",
+        "surface-variant": "#E5DED2",
+        "on-background": "#292923",
+        "on-surface": "#292923",
+        "on-surface-variant": "#434843",
+        "primary": "#354638",
+        "primary-container": "#354638",
+        "on-primary": "#ffffff",
+        "on-primary-container": "#d4e8d4",
+        "secondary": "#B65E46",
+        "secondary-container": "#ffdbd1",
+        "on-secondary": "#ffffff",
+        "on-secondary-container": "#772e1a",
+        "tertiary": "#C5AA79",
+        "tertiary-container": "#fddfaa",
+        "on-tertiary": "#261900",
+        "outline": "#737872",
+        "outline-variant": "#C5AA79",
+        "inverse-surface": "#292923",
+        "inverse-on-surface": "#F5F1E9",
+        "error": "#B65E46",
+        "error-container": "#fbeae6",
+        "on-error-container": "#B65E46"
+      },
+      borderRadius: {
+        "DEFAULT": "0.125rem",
+        "lg": "0.25rem",
+        "xl": "0.5rem",
+        "full": "0.75rem"
+      },
+      spacing: {
+        "space-xl": "2.5rem",
+        "space-sm": "0.5rem",
+        "margin-md": "2rem",
+        "margin": "3rem",
+        "space-lg": "1.5rem",
+        "gutter-sm": "1rem",
+        "gutter": "1.5rem",
+        "margin-sm": "1.25rem",
+        "space-xs": "0.25rem",
+        "space-md": "1rem"
+      },
+      fontFamily: {
+        "body-lg": ["Inter", "sans-serif"],
+        "headline-sm": ["EB Garamond", "serif"],
+        "label-md": ["Inter", "sans-serif"],
+        "body-md": ["Inter", "sans-serif"],
+        "headline-lg-mobile": ["EB Garamond", "serif"],
+        "headline-lg": ["EB Garamond", "serif"],
+        "label-sm": ["Inter", "sans-serif"],
+        "body-sm": ["Inter", "sans-serif"],
+        "display-hero-mobile": ["EB Garamond", "serif"],
+        "display-hero": ["EB Garamond", "serif"],
+        "subheading": ["EB Garamond", "serif"],
+        "headline-md": ["EB Garamond", "serif"],
+        "label-lg": ["Inter", "sans-serif"]
+      },
+      fontSize: {
+        "body-lg": ["17px", { lineHeight: "26px", fontWeight: "400" }],
+        "headline-sm": ["22px", { lineHeight: "28px", fontWeight: "600" }],
+        "label-md": ["11px", { lineHeight: "14px", letterSpacing: "0.1em", fontWeight: "600" }],
+        "body-md": ["15px", { lineHeight: "22px", fontWeight: "400" }],
+        "headline-lg-mobile": ["30px", { lineHeight: "36px", fontWeight: "500" }],
+        "headline-lg": ["40px", { lineHeight: "48px", letterSpacing: "-0.01em", fontWeight: "500" }],
+        "label-sm": ["10px", { lineHeight: "12px", letterSpacing: "0.05em", fontWeight: "500" }],
+        "body-sm": ["13px", { lineHeight: "18px", fontWeight: "400" }],
+        "display-hero-mobile": ["38px", { lineHeight: "46px", letterSpacing: "-0.01em", fontWeight: "500" }],
+        "display-hero": ["56px", { lineHeight: "64px", letterSpacing: "-0.02em", fontWeight: "500" }],
+        "subheading": ["19px", { lineHeight: "26px", letterSpacing: "0.01em", fontWeight: "400" }],
+        "headline-md": ["28px", { lineHeight: "36px", fontWeight: "600" }],
+        "label-lg": ["13px", { lineHeight: "16px", letterSpacing: "0.08em", fontWeight: "600" }]
+      }
+    }
+  }
+};</script></head><body class="bg-[#F5F1E9] text-[#292923] font-body-md text-body-md antialiased min-h-screen flex flex-col"><header class="fixed top-0 w-full z-50 pt-safe bg-[#F5F1E9]/90 backdrop-blur-xl border-b border-[#E5DED2] shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="h-16 px-margin-sm flex items-center justify-between"><div class="flex items-center gap-space-sm"><button aria-label="Open Menu" class="w-11 h-11 flex items-center justify-center text-[#292923] rounded-lg hover:bg-[#E5DED2] transition-colors" id="menu-open-btn"><span class="material-symbols-outlined text-[24px]">menu</span></button><div class="flex flex-col"><span class="font-headline-sm text-headline-sm font-semibold tracking-tight text-[#292923] leading-none">Fire &amp; Ice</span><span class="font-label-sm text-label-sm uppercase tracking-widest text-[#B65E46] mt-0.5 font-medium">Kathmandu 1996</span></div></div><div class="flex items-center gap-space-sm"><a class="h-11 px-space-md flex items-center gap-space-xs bg-[#354638] text-white rounded-lg shadow-sm hover:bg-[#28362b] transition-colors" data-path="order-online" href="#"><span class="material-symbols-outlined text-[18px]">shopping_bag</span><span class="font-label-md text-label-md uppercase tracking-wider font-semibold">Order</span></a><img alt="Profile" class="w-8 h-8 rounded-full object-cover shadow-sm ring-1 ring-[#C5AA79]/50" src="https://lh3.googleusercontent.com/aida/AEtjO1UJAqtpPFjh5tNWhlOYtAHxtuTurw2e-xDArn0EqoUJU91UH2Ch2z5q4gUNMgMu2Y1Bm5hPRTbinLyb440akdo6nZGD6o8RidcSmTTQou2dKlfBVbrax-EmFz3xg1_HIVHk2H6ET56tBulqkqVuh5oZQDSa21IGSyiURm3pBG4V26XYeZK2Lypy9ux1P9rFxiig9oUWyWpCeKKkWIPyRYV5fBGdrf1mCqGBh4m-ckQGFySmM2RvGMKtYyx4"/></div></div></header><div class="fixed inset-0 z-50 bg-[#292923]/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300" id="drawer-backdrop"></div><aside class="fixed top-0 left-0 bottom-0 z-50 w-5/6 max-w-sm bg-[#FFFFFF] shadow-2xl transform -translate-x-full transition-transform duration-300 ease-out flex flex-col justify-between pt-safe pb-safe border-r border-[#E5DED2]" id="drawer-panel"><div class="p-gutter"><div class="flex items-center justify-between pb-space-lg border-b border-[#E5DED2]"><div class="flex flex-col"><span class="font-headline-md text-headline-md text-[#354638] font-bold tracking-tight">Fire and Ice</span><span class="font-label-sm text-label-sm text-[#434843] uppercase tracking-widest">Kathmandu Heritage</span></div><button aria-label="Close Menu" class="w-11 h-11 flex items-center justify-center text-[#434843] hover:text-[#292923] rounded-lg" id="menu-close-btn"><span class="material-symbols-outlined text-[24px]">close</span></button></div><nav class="flex flex-col gap-space-xs mt-space-md"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-[#292923] hover:bg-[#F5F1E9] text-body-lg font-body-lg" data-path="home" href="#"><span class="material-symbols-outlined text-[#354638] text-[20px]">local_pizza</span><span>Home</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-[#292923] hover:bg-[#F5F1E9] text-body-lg font-body-lg" data-path="our-story" href="#"><span class="material-symbols-outlined text-[#C5AA79] text-[20px]">auto_stories</span><span>Our Story</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-[#292923] hover:bg-[#F5F1E9] text-body-lg font-body-lg font-semibold" data-path="complete-menu" href="#"><span class="material-symbols-outlined text-[#354638] text-[20px]">restaurant_menu</span><span>Complete Menu</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-[#292923] hover:bg-[#F5F1E9] text-body-lg font-body-lg" data-path="breakfast" href="#"><span class="material-symbols-outlined text-[#C5AA79] text-[20px]">bakery_dining</span><span>Breakfast</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-[#292923] hover:bg-[#F5F1E9] text-body-lg font-body-lg" data-path="locations" href="#"><span class="material-symbols-outlined text-[#B65E46] text-[20px]">pin_drop</span><span>Locations (Thamel &amp; Sanepa)</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-[#292923] hover:bg-[#F5F1E9] text-body-lg font-body-lg" data-path="press-and-stories" href="#"><span class="material-symbols-outlined text-[#C5AA79] text-[20px]">newspaper</span><span>Press &amp; Stories</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-[#292923] hover:bg-[#F5F1E9] text-body-lg font-body-lg" data-path="contact-and-visit" href="#"><span class="material-symbols-outlined text-[#354638] text-[20px]">import_contacts</span><span>Contact &amp; Visit</span></a></nav></div><div class="p-gutter bg-[#F5F1E9] border-t border-[#E5DED2]"><p class="font-headline-sm text-subheading text-[#B65E46] italic">"Kathmandu's wood-fired tradition since 1996."</p></div></aside><main class="flex-1 flex flex-col relative w-full pt-16 pb-24 bg-[#F5F1E9]"><div class="flex flex-col w-full pb-20">
+<!-- Editorial Header -->
+<section class="px-margin-sm pt-space-md pb-space-sm flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs text-[#B65E46] font-label-md text-label-md uppercase tracking-widest font-semibold">
+<span class="material-symbols-outlined text-[16px]">local_fire_department</span>
+<span>Cucina Napoletana • Kathmandu</span>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-[#292923] tracking-tight">Our Menu</h1>
+<p class="font-subheading text-subheading text-[#434843] italic">
+      Authentic Neapolitan wood-fired pizzas, handmade pastas, fresh insalate, and Italian desserts.
+    </p>
+<!-- Search Input & Quick Status -->
+<div class="mt-space-sm relative flex items-center">
+<span class="material-symbols-outlined absolute left-space-md text-[#737872] text-[20px] pointer-events-none">search</span>
+<input class="w-full h-12 pl-12 pr-10 bg-[#E5DED2] border border-transparent focus:border-[#C5AA79] rounded-lg font-body-md text-body-md text-[#292923] placeholder:text-[#737872] focus:outline-none focus:bg-[#FFFFFF] shadow-sm transition-all" id="menu-search-input" placeholder="Search dishes, ingredients..." type="search"/>
+<button class="hidden absolute right-3 w-7 h-7 rounded-full bg-[#dcdad1] text-[#292923] flex items-center justify-center" id="clear-search">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+</section>
+<!-- Sticky Dietary & Category Horizontal Filter Pills -->
+<section class="sticky top-16 z-30 bg-[#F5F1E9]/95 backdrop-blur-md py-space-sm px-margin-sm border-y border-[#E5DED2] shadow-sm">
+<div class="flex items-center gap-space-xs overflow-x-auto no-scrollbar py-0.5" id="category-pills">
+<button class="category-btn active px-space-md py-1.5 rounded-full font-label-md text-label-md tracking-wider uppercase transition-all bg-[#354638] text-white font-semibold shadow-sm shrink-0" data-cat="all">
+        All
+      </button>
+<button class="category-btn px-space-md py-1.5 rounded-full font-label-md text-label-md tracking-wider uppercase transition-all bg-[#E5DED2] text-[#292923] hover:bg-[#dcdad1] shrink-0" data-cat="pizza">
+        Wood-Fired Pizza
+      </button>
+<button class="category-btn px-space-md py-1.5 rounded-full font-label-md text-label-md tracking-wider uppercase transition-all bg-[#E5DED2] text-[#292923] hover:bg-[#dcdad1] shrink-0" data-cat="pasta">
+        Handmade Pasta
+      </button>
+<button class="category-btn px-space-md py-1.5 rounded-full font-label-md text-label-md tracking-wider uppercase transition-all bg-[#E5DED2] text-[#292923] hover:bg-[#dcdad1] shrink-0" data-cat="desserts">
+        Dolci &amp; Gelato
+      </button>
+<button class="category-btn px-space-md py-1.5 rounded-full font-label-md text-label-md tracking-wider uppercase transition-all bg-[#E5DED2] text-[#292923] hover:bg-[#dcdad1] shrink-0" data-cat="breakfast">
+        Breakfast
+      </button>
+<button class="category-btn px-space-md py-1.5 rounded-full font-label-md text-label-md tracking-wider uppercase transition-all bg-[#E5DED2] text-[#292923] hover:bg-[#dcdad1] shrink-0" data-cat="insalate">
+        Insalate &amp; Antipasti
+      </button>
+<button class="category-btn px-space-md py-1.5 rounded-full font-label-md text-label-md tracking-wider uppercase transition-all bg-[#E5DED2] text-[#292923] hover:bg-[#dcdad1] shrink-0" data-cat="beverages">
+        Beverages &amp; Wine
+      </button>
+</div>
+</section>
+<!-- Menu Content Stream -->
+<div class="px-margin-sm flex flex-col gap-space-xl mt-space-md" id="menu-sections">
+<!-- SECTION: PIZZA -->
+<section class="menu-section flex flex-col gap-space-md" data-section="pizza">
+<div class="flex items-baseline justify-between border-none pb-space-xs">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-[#B65E46] font-bold">Capitolo I</span>
+<h2 class="font-headline-md text-headline-md text-[#292923] tracking-tight">Le Pizze Tradizionali</h2>
+</div>
+<span class="font-body-sm text-body-sm text-[#B65E46] italic">Wood-fired at 450°C</span>
+</div>
+<!-- Feature Highlight Dish (Fire & Ice Special) -->
+<article class="dish-card bg-[#FFFFFF] rounded-xl shadow-md border border-[#E5DED2] overflow-hidden flex flex-col group relative" data-desc="mozzarella spicy salami roasted bell peppers oregano" data-name="fire &amp; ice special">
+<div class="relative w-full h-52 overflow-hidden bg-[#E5DED2]">
+<img alt="Artisanal Neapolitan wood-fired pizza with bubbling mozzarella, charred blistered crust, fresh basil leaves, rich San Marzano tomato sauce on rustic ceramic plate" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZJrPRskN5GyhPljjNIic9GdUyAd4CLiUPdRlV-4J4B2MnMKTmyod1pJBWBsj792RZ9hIC2NLvF7Vci6T5pD3jsY0oDuuhmms-VC3zS8Mm0SeFUhQ-FNkumeiaIqE6hTMnYCd4IDnzfMBbJjpolNVYFQ0j_nAi8zDKRLMjo9hPdkGhWwG6qGVWsXVP34PNMZrMuKFBJsdWnTntjq-D_LqJO_4tWW62QhapuDHXk48SPJvWFTyM-r3qSA"/>
+<div class="absolute top-3 left-3 flex gap-1">
+<span class="bg-[#354638] text-white font-label-sm text-label-sm uppercase tracking-wider px-2 py-0.5 rounded-lg shadow-sm font-semibold">Chef's Signature</span>
+<span class="bg-[#FFFFFF]/90 text-[#292923] border border-[#E5DED2] font-label-sm text-label-sm uppercase tracking-wider px-2 py-0.5 rounded-lg backdrop-blur-sm">Since '96</span>
+</div>
+</div>
+<div class="p-space-md flex flex-col gap-space-xs">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-[#292923] font-semibold leading-tight">Fire &amp; Ice Special</h3>
+<div class="flex items-center gap-space-xs mt-1">
+<span class="bg-[#fbeae6] text-[#B65E46] border border-[#B65E46]/20 font-label-sm text-label-sm px-1.5 py-0.2 rounded font-medium flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]">local_fire_department</span> Spicy
+                </span>
+<span class="bg-[#E5DED2] text-[#292923] font-label-sm text-label-sm px-1.5 py-0.2 rounded font-medium">GF Available</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-headline-sm text-headline-sm text-[#B65E46] font-bold whitespace-nowrap">NPR 1,280</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-[#434843] mt-1">
+            Imported mozzarella, spicy artisanal Italian salami, wood-roasted bell peppers, and fresh wild oregano over San Marzano DOP reduction.
+          </p>
+<div class="pt-space-sm flex items-center justify-between border-t border-[#E5DED2]/60 mt-1">
+<span class="font-label-sm text-label-sm text-[#C5AA79] uppercase tracking-wider flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-[14px]">local_pizza</span> Wood Oven Blistered
+            </span>
+<button class="add-dish-btn h-9 px-space-md bg-[#354638] text-white rounded-lg font-label-md text-label-md uppercase tracking-wider font-semibold shadow-sm hover:bg-[#28362b] active:scale-95 transition-all flex items-center gap-1" data-dish-name="Fire &amp; Ice Special" data-dish-price="1280">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Add</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Standard Pizza Items Grid/Cards -->
+<div class="flex flex-col gap-space-sm">
+<!-- Margherita Classica -->
+<article class="dish-card bg-[#FFFFFF] p-space-md rounded-xl border border-[#E5DED2] shadow-sm flex flex-col gap-space-xs transition-shadow" data-desc="tomato sauce mozzarella fresh basil" data-name="margherita classica">
+<div class="flex items-start justify-between gap-space-sm">
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-headline-sm text-[#292923] font-semibold">Margherita Classica</h3>
+<span class="w-4 h-4 rounded-full bg-[#E5DED2] flex items-center justify-center text-[10px] text-[#354638] font-bold" title="Vegetarian">V</span>
+</div>
+<p class="font-body-sm text-body-sm text-[#434843] mt-1">San Marzano tomato pulp, whole milk mozzarella, extra virgin olive oil, and sweet basil.</p>
+</div>
+<span class="font-headline-sm text-headline-sm text-[#B65E46] font-semibold whitespace-nowrap">NPR 920</span>
+</div>
+<div class="flex items-center justify-between pt-space-xs mt-1">
+<span class="font-label-sm text-label-sm text-[#B65E46] tracking-widest uppercase font-medium">Classic Neapolitan</span>
+<button class="add-dish-btn h-8 px-space-md bg-[#354638] text-white rounded-lg font-label-md text-label-md uppercase tracking-wider font-semibold hover:bg-[#28362b] active:scale-95 transition-all flex items-center gap-1" data-dish-name="Margherita Classica" data-dish-price="920">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Add</span>
+</button>
+</div>
+</article>
+<!-- Quattro Formaggi -->
+<article class="dish-card bg-[#FFFFFF] p-space-md rounded-xl border border-[#E5DED2] shadow-sm flex flex-col gap-space-xs transition-shadow" data-desc="fior di latte gorgonzola parmesan scamorza cheese" data-name="quattro formaggi">
+<div class="flex items-start justify-between gap-space-sm">
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-headline-sm text-[#292923] font-semibold">Quattro Formaggi</h3>
+<span class="w-4 h-4 rounded-full bg-[#E5DED2] flex items-center justify-center text-[10px] text-[#354638] font-bold" title="Vegetarian">V</span>
+</div>
+<p class="font-body-sm text-body-sm text-[#434843] mt-1">Creamy fior di latte, aged blue gorgonzola dolce, grana padano, and smoked scamorza.</p>
+</div>
+<span class="font-headline-sm text-headline-sm text-[#B65E46] font-semibold whitespace-nowrap">NPR 1,250</span>
+</div>
+<div class="flex items-center justify-between pt-space-xs mt-1">
+<span class="font-label-sm text-label-sm text-[#C5AA79] tracking-widest uppercase font-semibold">DOP Cheeses</span>
+<button class="add-dish-btn h-8 px-space-md bg-[#354638] text-white rounded-lg font-label-md text-label-md uppercase tracking-wider font-semibold hover:bg-[#28362b] active:scale-95 transition-all flex items-center gap-1" data-dish-name="Quattro Formaggi" data-dish-price="1250">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Add</span>
+</button>
+</div>
+</article>
+<!-- Prosciutto e Funghi -->
+<article class="dish-card bg-[#FFFFFF] p-space-md rounded-xl border border-[#E5DED2] shadow-sm flex flex-col gap-space-xs transition-shadow" data-desc="cured ham button mushrooms thyme mozzarella" data-name="prosciutto e funghi">
+<div class="flex items-start justify-between gap-space-sm">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-[#292923] font-semibold">Prosciutto e Funghi</h3>
+<p class="font-body-sm text-body-sm text-[#434843] mt-1">Delicate Italian prosciutto cotto, sauteed forest button mushrooms, garden thyme, mozzarella.</p>
+</div>
+<span class="font-headline-sm text-headline-sm text-[#B65E46] font-semibold whitespace-nowrap">NPR 1,320</span>
+</div>
+<div class="flex items-center justify-between pt-space-xs mt-1">
+<span class="font-label-sm text-label-sm text-[#B65E46] tracking-widest uppercase font-medium">House Favorite</span>
+<button class="add-dish-btn h-8 px-space-md bg-[#354638] text-white rounded-lg font-label-md text-label-md uppercase tracking-wider font-semibold hover:bg-[#28362b] active:scale-95 transition-all flex items-center gap-1" data-dish-name="Prosciutto e Funghi" data-dish-price="1320">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Add</span>
+</button>
+</div>
+</article>
+<!-- Ortolana Rustica -->
+<article class="dish-card bg-[#FFFFFF] p-space-md rounded-xl border border-[#E5DED2] shadow-sm flex flex-col gap-space-xs transition-shadow" data-desc="grilled zucchini eggplant bell peppers olives mozzarella vegetarian" data-name="ortolana rustica">
+<div class="flex items-start justify-between gap-space-sm">
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-headline-sm text-[#292923] font-semibold">Ortolana Rustica</h3>
+<span class="bg-[#E5DED2] text-[#354638] font-label-sm text-label-sm px-1.5 py-0.2 rounded font-semibold border border-[#C5AA79]/40">Vegetarian</span>
+</div>
+<p class="font-body-sm text-body-sm text-[#434843] mt-1">Char-grilled zucchini, slow-baked purple eggplant, sweet red peppers, taggiasca olives, fior di latte.</p>
+</div>
+<span class="font-headline-sm text-headline-sm text-[#B65E46] font-semibold whitespace-nowrap">NPR 1,050</span>
+</div>
+<div class="flex items-center justify-between pt-space-xs mt-1">
+<span class="font-label-sm text-label-sm text-[#C5AA79] tracking-widest uppercase font-semibold">From Local Organic Farms</span>
+<button class="add-dish-btn h-8 px-space-md bg-[#354638] text-white rounded-lg font-label-md text-label-md uppercase tracking-wider font-semibold hover:bg-[#28362b] active:scale-95 transition-all flex items-center gap-1" data-dish-name="Ortolana Rustica" data-dish-price="1050">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Add</span>
+</button>
+</div>
+</article>
+<!-- Calzone Tradizionale -->
+<article class="dish-card bg-[#FFFFFF] p-space-md rounded-xl border border-[#E5DED2] shadow-sm flex flex-col gap-space-xs transition-shadow" data-desc="folded pizza stuffed with ricotta salami mozzarella" data-name="calzone tradizionale">
+<div class="flex items-start justify-between gap-space-sm">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-[#292923] font-semibold">Calzone Tradizionale</h3>
+<p class="font-body-sm text-body-sm text-[#434843] mt-1">Folded golden wood-fired crust filled with fresh whipped ricotta, Napoli spicy salami, and oozing mozzarella.</p>
+</div>
+<span class="font-headline-sm text-headline-sm text-[#B65E46] font-semibold whitespace-nowrap">NPR 1,180</span>
+</div>
+<div class="flex items-center justify-between pt-space-xs mt-1">
+<span class="font-label-sm text-label-sm text-[#B65E46] tracking-widest uppercase font-medium">Folded &amp; Steamed</span>
+<button class="add-dish-btn h-8 px-space-md bg-[#354638] text-white rounded-lg font-label-md text-label-md uppercase tracking-wider font-semibold hover:bg-[#28362b] active:scale-95 transition-all flex items-center gap-1" data-dish-name="Calzone Tradizionale" data-dish-price="1180">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Add</span>
+</button>
+</div>
+</article>
+</div>
+</section>
+<!-- SECTION: HANDMADE PASTA -->
+<section class="menu-section flex flex-col gap-space-md" data-section="pasta">
+<div class="flex items-baseline justify-between border-none pb-space-xs">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-[#B65E46] font-bold">Capitolo II</span>
+<h2 class="font-headline-md text-headline-md text-[#292923] tracking-tight">Pasta Fatta in Casa</h2>
+</div>
+<span class="font-body-sm text-body-sm text-[#B65E46] italic">Rolled fresh each morning</span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<!-- Spaghetti alla Bolognese -->
+<article class="dish-card bg-[#FFFFFF] p-space-md rounded-xl border border-[#E5DED2] shadow-sm flex flex-col gap-space-xs" data-desc="slow braised beef ragù parmesan parsley hand rolled" data-name="spaghetti alla bolognese">
+<div class="flex items-start justify-between gap-space-sm">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-[#292923] font-semibold">Spaghetti alla Bolognese</h3>
+<p class="font-body-sm text-body-sm text-[#434843] mt-1">Eight-hour slow-braised tender beef ragù with rosemary, aged Parmigiano Reggiano, Italian flat parsley.</p>
+</div>
+<span class="font-headline-sm text-headline-sm text-[#B65E46] font-semibold whitespace-nowrap">NPR 1,150</span>
+</div>
+<div class="flex items-center justify-between pt-space-xs mt-1">
+<span class="font-label-sm text-label-sm text-[#B65E46] tracking-widest uppercase font-medium">8-Hour Ragù</span>
+<button class="add-dish-btn h-8 px-space-md bg-[#354638] text-white rounded-lg font-label-md text-label-md uppercase tracking-wider font-semibold hover:bg-[#28362b] active:scale-95 transition-all flex items-center gap-1" data-dish-name="Spaghetti alla Bolognese" data-dish-price="1150">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Add</span>
+</button>
+</div>
+</article>
+<!-- Penne all'Arrabbiata -->
+<article class="dish-card bg-[#FFFFFF] p-space-md rounded-xl border border-[#E5DED2] shadow-sm flex flex-col gap-space-xs" data-desc="spicy garlic tomato sauce fresh chili parsley vegetarian" data-name="penne all'arrabbiata">
+<div class="flex items-start justify-between gap-space-sm">
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-headline-sm text-[#292923] font-semibold">Penne all'Arrabbiata</h3>
+<span class="bg-[#fbeae6] text-[#B65E46] border border-[#B65E46]/20 font-label-sm text-label-sm px-1.5 py-0.2 rounded font-medium">Spicy</span>
+<span class="w-4 h-4 rounded-full bg-[#E5DED2] flex items-center justify-center text-[10px] text-[#354638] font-bold">V</span>
+</div>
+<p class="font-body-sm text-body-sm text-[#434843] mt-1">Extruded bronze penne tossed with fiery chili, roasted garlic, San Marzano coulis, and cold-pressed olive oil.</p>
+</div>
+<span class="font-headline-sm text-headline-sm text-[#B65E46] font-semibold whitespace-nowrap">NPR 950</span>
+</div>
+<div class="flex items-center justify-between pt-space-xs mt-1">
+<span class="font-label-sm text-label-sm text-[#737872] tracking-widest uppercase">Vegan Available</span>
+<button class="add-dish-btn h-8 px-space-md bg-[#354638] text-white rounded-lg font-label-md text-label-md uppercase tracking-wider font-semibold hover:bg-[#28362b] active:scale-95 transition-all flex items-center gap-1" data-dish-name="Penne all'Arrabbiata" data-dish-price="950">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Add</span>
+</button>
+</div>
+</article>
+<!-- Lasagna al Forno -->
+<article class="dish-card bg-[#FFFFFF] p-space-md rounded-xl border border-[#E5DED2] shadow-sm flex flex-col gap-space-xs" data-desc="layers of pasta béchamel slow cooked meat ragù baked" data-name="lasagna al forno">
+<div class="flex items-start justify-between gap-space-sm">
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-headline-sm text-[#292923] font-semibold">Lasagna al Forno</h3>
+<span class="bg-[#E5DED2] text-[#354638] border border-[#C5AA79]/50 font-label-sm text-label-sm px-1.5 py-0.2 rounded font-semibold">Oven Baked</span>
+</div>
+<p class="font-body-sm text-body-sm text-[#434843] mt-1">Five silky layers of fresh egg pasta, silky nutmeg béchamel sauce, Bolognese ragù, and crusted grana.</p>
+</div>
+<span class="font-headline-sm text-headline-sm text-[#B65E46] font-semibold whitespace-nowrap">NPR 1,220</span>
+</div>
+<div class="flex items-center justify-between pt-space-xs mt-1">
+<span class="font-label-sm text-label-sm text-[#B65E46] tracking-widest uppercase font-medium">Clay Pot Hearth</span>
+<button class="add-dish-btn h-8 px-space-md bg-[#354638] text-white rounded-lg font-label-md text-label-md uppercase tracking-wider font-semibold hover:bg-[#28362b] active:scale-95 transition-all flex items-center gap-1" data-dish-name="Lasagna al Forno" data-dish-price="1220">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Add</span>
+</button>
+</div>
+</article>
+</div>
+</section>
+<!-- SECTION: DESSERTS & GELATO -->
+<section class="menu-section flex flex-col gap-space-md" data-section="desserts">
+<div class="flex items-baseline justify-between border-none pb-space-xs">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-[#B65E46] font-bold">Capitolo III</span>
+<h2 class="font-headline-md text-headline-md text-[#292923] tracking-tight">Dolci Artigianali</h2>
+</div>
+<span class="font-body-sm text-body-sm text-[#B65E46] italic">Crafted daily</span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<!-- Tiramisu -->
+<article class="dish-card bg-[#FFFFFF] p-space-md rounded-xl border border-[#E5DED2] shadow-sm flex flex-col gap-space-xs" data-desc="mascarpone cream espresso soaked savoiardi cocoa sweet dessert" data-name="traditional tiramisù">
+<div class="flex items-start justify-between gap-space-sm">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-[#292923] font-semibold">Traditional Tiramisù</h3>
+<p class="font-body-sm text-body-sm text-[#434843] mt-1">Airy Italian mascarpone sabayon, Illy espresso-soaked ladyfingers, dusted with Dutch bitter cocoa.</p>
+</div>
+<span class="font-headline-sm text-headline-sm text-[#B65E46] font-semibold whitespace-nowrap">NPR 620</span>
+</div>
+<div class="flex items-center justify-between pt-space-xs mt-1">
+<span class="font-label-sm text-label-sm text-[#C5AA79] tracking-widest uppercase font-semibold">Fire &amp; Ice Recipe Since 1996</span>
+<button class="add-dish-btn h-8 px-space-md bg-[#354638] text-white rounded-lg font-label-md text-label-md uppercase tracking-wider font-semibold hover:bg-[#28362b] active:scale-95 transition-all flex items-center gap-1" data-dish-name="Traditional Tiramisù" data-dish-price="620">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Add</span>
+</button>
+</div>
+</article>
+<!-- Gelato -->
+<article class="dish-card bg-[#FFFFFF] p-space-md rounded-xl border border-[#E5DED2] shadow-sm flex flex-col gap-space-xs" data-desc="two scoops pistachio dark chocolate fior di latte ice cream" data-name="artisanal gelato">
+<div class="flex items-start justify-between gap-space-sm">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-[#292923] font-semibold">Artisanal Gelato</h3>
+<p class="font-body-sm text-body-sm text-[#434843] mt-1">Two generous scoops churned daily: Sicilian Bronte Pistachio, 70% Dark Chocolate, or Madagascan Fior di Latte.</p>
+</div>
+<span class="font-headline-sm text-headline-sm text-[#B65E46] font-semibold whitespace-nowrap">NPR 480</span>
+</div>
+<div class="flex items-center justify-between pt-space-xs mt-1">
+<span class="font-label-sm text-label-sm text-[#B65E46] tracking-widest uppercase font-medium">House Churned</span>
+<button class="add-dish-btn h-8 px-space-md bg-[#354638] text-white rounded-lg font-label-md text-label-md uppercase tracking-wider font-semibold hover:bg-[#28362b] active:scale-95 transition-all flex items-center gap-1" data-dish-name="Artisanal Gelato" data-dish-price="480">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Add</span>
+</button>
+</div>
+</article>
+</div>
+</section>
+<!-- Heritage Wine & Atmosphere Vignette Inset -->
+<div class="bg-[#E5DED2] p-space-lg rounded-xl flex flex-col gap-space-sm shadow-sm relative overflow-hidden border border-[#C5AA79]/40">
+<div class="flex items-center gap-2 text-[#C5AA79] font-label-md text-label-md uppercase tracking-widest font-semibold">
+<span class="material-symbols-outlined text-[18px]">wine_bar</span>
+<span class="text-[#354638]">Vini &amp; Bevande</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-[#354638] font-semibold">Tuscan &amp; Piedmontese Cellar</h3>
+<p class="font-body-sm text-body-sm text-[#434843]">
+        Carefully paired Italian Chianti, Barolo, crisp Pinot Grigio, plus homemade Italian sodas and Himalayan mountain roasted espresso. Ask our floor sommelier for today's uncorkings.
+      </p>
+<div class="flex items-center gap-space-md pt-space-xs border-t border-[#C5AA79]/30">
+<span class="font-label-sm text-label-sm text-[#B65E46] font-semibold uppercase tracking-wider">Thamel • Sanepa</span>
+<span class="text-[#C5AA79] text-label-sm font-label-sm">•</span>
+<span class="font-label-sm text-label-sm text-[#354638] font-semibold uppercase tracking-wider">Served at 16°C</span>
+</div>
+</div>
+<!-- Empty Search State Placeholder -->
+<div class="hidden flex-col items-center justify-center text-center py-space-xl px-margin-sm gap-space-sm bg-[#E5DED2] rounded-xl border border-[#C5AA79]/30" id="no-results-state">
+<div class="w-12 h-12 rounded-full bg-[#FFFFFF] flex items-center justify-center text-[#B65E46] shadow-sm">
+<span class="material-symbols-outlined text-[24px]">soup_kitchen</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-[#292923] font-semibold">No culinary match found</h3>
+<p class="font-body-sm text-body-sm text-[#434843] max-w-xs">
+        We couldn't locate any dish matching your search. Try searching for "pizza", "truffle", "tiramisu", or reset filters.
+      </p>
+<button class="mt-space-xs px-space-md py-2 bg-[#354638] text-white rounded-lg font-label-md text-label-md uppercase tracking-wider font-semibold shadow-sm hover:bg-[#28362b] transition-all" id="reset-filter-btn">
+        View Full Menu
+      </button>
+</div>
+</div>
+<!-- Interactive Floating Order & Cart Bottom Tray -->
+<aside class="fixed bottom-24 inset-x-3 z-40 max-w-md mx-auto transition-transform duration-300 ease-out transform translate-y-32" id="floating-cart-bar">
+<div class="bg-[#292923] text-[#F5F1E9] p-space-sm rounded-xl shadow-2xl border border-[#C5AA79]/40 flex items-center justify-between">
+<div class="flex items-center gap-space-sm pl-2">
+<div class="relative w-10 h-10 rounded-lg bg-[#354638] text-white flex items-center justify-center font-headline-sm text-headline-sm font-bold border border-[#C5AA79]/40">
+<span id="cart-item-count">0</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-[#E5DED2]">Order Total</span>
+<span class="font-headline-sm text-headline-sm font-bold text-[#F5F1E9]" id="cart-total-price">NPR 0</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="w-10 h-10 flex items-center justify-center text-[#C5AA79] hover:text-white transition-colors" id="quick-clear-cart" title="Clear selection">
+<span class="material-symbols-outlined text-[20px]">delete_sweep</span>
+</button>
+<a class="h-10 px-space-md bg-[#354638] text-white rounded-lg font-label-md text-label-md uppercase tracking-widest font-semibold flex items-center gap-1 shadow-md hover:bg-[#28362b] border border-[#C5AA79]/50 active:scale-95 transition-all" data-path="order-online" href="#">
+<span>Checkout</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- Interactive Client-side Script -->
+<script>
+    (function initMenuInteractions() {
+      let order = [];
+      const searchInput = document.getElementById('menu-search-input');
+      const clearSearchBtn = document.getElementById('clear-search');
+      const categoryPills = document.querySelectorAll('.category-btn');
+      const dishCards = document.querySelectorAll('.dish-card');
+      const menuSections = document.querySelectorAll('.menu-section');
+      const noResults = document.getElementById('no-results-state');
+      const resetBtn = document.getElementById('reset-filter-btn');
+
+      const cartBar = document.getElementById('floating-cart-bar');
+      const cartCountEl = document.getElementById('cart-item-count');
+      const cartTotalEl = document.getElementById('cart-total-price');
+      const clearCartBtn = document.getElementById('quick-clear-cart');
+
+      let currentCategory = 'all';
+
+      // Category Switching
+      categoryPills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          categoryPills.forEach(p => {
+            p.classList.remove('bg-[#354638]', 'text-white', 'font-semibold', 'shadow-sm');
+            p.classList.add('bg-[#E5DED2]', 'text-[#292923]');
+          });
+          pill.classList.remove('bg-[#E5DED2]', 'text-[#292923]');
+          pill.classList.add('bg-[#354638]', 'text-white', 'font-semibold', 'shadow-sm');
+          
+          currentCategory = pill.getAttribute('data-cat');
+          applyFilters();
+        });
+      });
+
+      // Search Filtering
+      searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.trim();
+        if (query.length > 0) {
+          clearSearchBtn.classList.remove('hidden');
+        } else {
+          clearSearchBtn.classList.add('hidden');
+        }
+        applyFilters();
+      });
+
+      clearSearchBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        clearSearchBtn.classList.add('hidden');
+        applyFilters();
+        searchInput.focus();
+      });
+
+      resetBtn && resetBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        clearSearchBtn.classList.add('hidden');
+        currentCategory = 'all';
+        categoryPills.forEach((p, idx) => {
+          if (idx === 0) {
+            p.classList.remove('bg-[#E5DED2]', 'text-[#292923]');
+            p.classList.add('bg-[#354638]', 'text-white', 'font-semibold', 'shadow-sm');
+          } else {
+            p.classList.remove('bg-[#354638]', 'text-white', 'font-semibold', 'shadow-sm');
+            p.classList.add('bg-[#E5DED2]', 'text-[#292923]');
+          }
+        });
+        applyFilters();
+      });
+
+      function applyFilters() {
+        const q = searchInput.value.toLowerCase().trim();
+        let totalVisibleDishes = 0;
+
+        menuSections.forEach(section => {
+          const sectionCat = section.getAttribute('data-section');
+          const matchesCat = (currentCategory === 'all' || currentCategory === sectionCat);
+
+          let visibleInSection = 0;
+          const cards = section.querySelectorAll('.dish-card');
+          cards.forEach(card => {
+            const name = card.getAttribute('data-name') || '';
+            const desc = card.getAttribute('data-desc') || '';
+            const matchesQuery = !q || name.includes(q) || desc.includes(q);
+
+            if (matchesCat && matchesQuery) {
+              card.style.display = 'flex';
+              visibleInSection++;
+              totalVisibleDishes++;
+            } else {
+              card.style.display = 'none';
+            }
+          });
+
+          if (visibleInSection > 0) {
+            section.style.display = 'flex';
+          } else {
+            section.style.display = 'none';
+          }
+        });
+
+        if (totalVisibleDishes === 0) {
+          noResults.classList.remove('hidden');
+          noResults.classList.add('flex');
+        } else {
+          noResults.classList.add('hidden');
+          noResults.classList.remove('flex');
+        }
+      }
+
+      // Add to Order Logic
+      document.querySelectorAll('.add-dish-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const name = btn.getAttribute('data-dish-name');
+          const price = parseInt(btn.getAttribute('data-dish-price'), 10);
+          
+          order.push({ name, price });
+          updateCartUI();
+
+          // Button feedback micro-interaction
+          const prevText = btn.innerHTML;
+          btn.innerHTML = '<span class="material-symbols-outlined text-[16px]">check</span><span>Added</span>';
+          btn.classList.remove('bg-[#354638]');
+          btn.classList.add('bg-[#C5AA79]', 'text-[#292923]');
+          setTimeout(() => {
+            btn.innerHTML = prevText;
+            btn.classList.remove('bg-[#C5AA79]', 'text-[#292923]');
+            btn.classList.add('bg-[#354638]');
+          }, 800);
+        });
+      });
+
+      clearCartBtn.addEventListener('click', () => {
+        order = [];
+        updateCartUI();
+      });
+
+      function updateCartUI() {
+        if (order.length > 0) {
+          const total = order.reduce((sum, item) => sum + item.price, 0);
+          cartCountEl.textContent = order.length;
+          cartTotalEl.textContent = 'NPR ' + total.toLocaleString();
+          cartBar.classList.remove('translate-y-32');
+        } else {
+          cartBar.classList.add('translate-y-32');
+        }
+      }
+    })();
+  </script>
+</div><footer class="w-full bg-[#354638] text-[#F5F1E9] px-margin-sm py-space-xl mt-space-xl border-t border-[#C5AA79]/30"><div class="flex flex-col gap-space-lg"><div class="flex flex-col gap-space-xs"><h2 class="font-headline-md text-headline-md tracking-tight font-medium text-[#F5F1E9]">Fire and Ice Pizzeria</h2><p class="font-subheading text-subheading italic text-[#C5AA79]">Serving wood-fired Italian tradition in Kathmandu since 1996</p></div><div class="grid grid-cols-1 gap-space-md pt-space-xs"><div class="bg-black/20 p-space-md rounded-lg border border-[#C5AA79]/20"><h3 class="font-headline-sm text-headline-sm text-[#C5AA79] mb-space-xs">Thamel</h3><p class="font-body-sm text-body-sm text-[#F5F1E9]/90">Tridevi Sadak, Thamel, Kathmandu</p><p class="font-body-sm text-body-sm text-[#F5F1E9]/80">Daily: 8:00 AM – 10:00 PM</p><a class="font-label-md text-label-md text-[#C5AA79] hover:underline mt-space-xs inline-block" href="tel:+97714250210">+977 1-4250210</a></div><div class="bg-black/20 p-space-md rounded-lg border border-[#C5AA79]/20"><h3 class="font-headline-sm text-headline-sm text-[#C5AA79] mb-space-xs">Sanepa</h3><p class="font-body-sm text-body-sm text-[#F5F1E9]/90">Jhamsikhel Road, Lalitpur</p><p class="font-body-sm text-body-sm text-[#F5F1E9]/80">Daily: 10:00 AM – 10:00 PM</p><a class="font-label-md text-label-md text-[#C5AA79] hover:underline mt-space-xs inline-block" href="tel:+97715538914">+977 1-5538914</a></div></div><div class="flex items-center justify-between pt-space-md border-t border-[#C5AA79]/20"><div class="flex items-center gap-space-md"><a aria-label="Instagram" class="text-[#C5AA79] hover:text-[#F5F1E9] transition-colors" href="#"><span class="material-symbols-outlined text-[20px]">photo_camera</span></a><a aria-label="Facebook" class="text-[#C5AA79] hover:text-[#F5F1E9] transition-colors" href="#"><span class="material-symbols-outlined text-[20px]">public</span></a><a aria-label="Tripadvisor" class="text-[#C5AA79] hover:text-[#F5F1E9] transition-colors" href="#"><span class="material-symbols-outlined text-[20px]">reviews</span></a></div><p class="font-label-sm text-label-sm text-[#E5DED2]/80">© 2024 Fire and Ice Pizzeria Kathmandu.</p></div></div></footer></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-[#F5F1E9]/95 backdrop-blur-xl border-t border-[#C5AA79]/40 shadow-[0_-1px_12px_rgba(0,0,0,0.06)]" data-active-classes="text-[#354638] font-bold"><div class="flex justify-around items-center h-20 px-space-sm"><a class="flex flex-col items-center justify-center gap-1 w-14 h-14 text-[#737872] hover:text-[#292923] transition-colors" data-path="home" href="#"><span class="material-symbols-outlined text-[24px]">home</span><span class="font-label-sm text-label-sm uppercase tracking-wider">Home</span></a><a aria-current="page" class="flex flex-col items-center justify-center gap-1 w-14 h-14 transition-colors text-[#354638] font-bold" data-path="complete-menu" href="#"><span class="material-symbols-outlined text-[24px]">restaurant_menu</span><span class="font-label-sm text-label-sm uppercase tracking-wider">Menu</span></a><a class="flex flex-col items-center justify-center gap-1 w-14 h-14 text-[#737872] hover:text-[#292923] transition-colors" data-path="order-online" href="#"><span class="material-symbols-outlined text-[24px]">shopping_bag</span><span class="font-label-sm text-label-sm uppercase tracking-wider">Order</span></a><a class="flex flex-col items-center justify-center gap-1 w-14 h-14 text-[#737872] hover:text-[#292923] transition-colors" data-path="locations" href="#"><span class="material-symbols-outlined text-[24px]">map</span><span class="font-label-sm text-label-sm uppercase tracking-wider">Visit</span></a><a class="flex flex-col items-center justify-center gap-1 w-14 h-14 text-[#737872] hover:text-[#292923] transition-colors" data-path="contact-and-visit" href="#"><span class="material-symbols-outlined text-[24px]">table_restaurant</span><span class="font-label-sm text-label-sm uppercase tracking-wider">Reserve</span></a></div></nav><script>const openBtn=document.getElementById('menu-open-btn');const closeBtn=document.getElementById('menu-close-btn');const backdrop=document.getElementById('drawer-backdrop');const drawer=document.getElementById('drawer-panel');function openMenu(){backdrop.classList.remove('opacity-0','pointer-events-none');backdrop.classList.add('opacity-100');drawer.classList.remove('-translate-x-full');}function closeMenu(){backdrop.classList.add('opacity-0','pointer-events-none');backdrop.classList.remove('opacity-100');drawer.classList.add('-translate-x-full');}openBtn&&openBtn.addEventListener('click',openMenu);closeBtn&&closeBtn.addEventListener('click',closeMenu);backdrop&&backdrop.addEventListener('click',closeMenu);</script></body></html>
